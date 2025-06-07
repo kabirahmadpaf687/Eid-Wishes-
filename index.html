@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eid ul-Adha Wishes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('kabir.JPG') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    #nameForm input {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      margin-top: 20px;
+      outline: none;
+    }
+
+    #nameForm button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      background: #ffd700;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    #nameForm button:hover {
+      background: #ffcc00;
+    }
+
+    #wishMessage {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .emoji {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🐐🌙✨</div>
+    <h1>Eid ul-Adha Mubarak!</h1>
+
+    <form id="nameForm" onsubmit="showWish(event)">
+      <input type="text" id="username" placeholder="Enter your name..." required />
+      <button type="submit">Get Eid Wish</button>
+    </form>
+
+    <div id="wishMessage"></div>
+    <div class="footer">— With warm wishes, <strong>Kabir Ahmad</strong></div>
+  </div>
+
+  <script>
+    function showWish(event) {
+      event.preventDefault();
+      const name = document.getElementById("username").value.trim();
+      const form = document.getElementById("nameForm");
+      const messageBox = document.getElementById("wishMessage");
+
+      if (name !== "") {
+        messageBox.innerHTML = `
+          Dear <strong>${name}</strong>,<br><br>
+          May your Bakra Eid be filled with happiness, sacrifice, and endless blessings. 🐐🌙<br>
+          May your prayers be answered and your heart filled with peace.<br><br>
+          <em>Eid Mubarak to you and your loved ones!</em><br><br>
+          — From <strong>Kabir Ahmad</strong> ❤️
+        `;
+        form.style.display = "none";
+        messageBox.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
